@@ -7,7 +7,7 @@ use axum::{
 };
 use std::net::SocketAddr;
 use std::{env};
-use crate::handlers::create_todo;
+use crate::handlers::{create_todo, root};
 use crate::repositories::{TodoRepository, TodoRepositoryForMemory};
 
 
@@ -28,14 +28,10 @@ async fn main() {
         .unwrap();
 }
 
-fn create_app<T: TodoRepository>(repository: T) -> Router {
+fn create_app<T: TodoRepository>(_: T) -> Router {
     Router::new()
         .route("/", get(root))
         .route("/todos", post(create_todo::<T>))
-}
-
-pub async fn root() -> &'static str {
-    "Hello, World!"
 }
 
 #[cfg(test)]

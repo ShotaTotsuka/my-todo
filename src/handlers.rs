@@ -5,6 +5,10 @@ use axum::Json;
 use axum::response::IntoResponse;
 use crate::repositories::{CreateTodo, TodoRepository};
 
+pub async fn root() -> &'static str {
+    "Hello, World!"
+}
+
 pub async fn create_todo<T: TodoRepository>(
     Json(payload): Json<CreateTodo>,
     Extension(repository): Extension<Arc<T>>,
