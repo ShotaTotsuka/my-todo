@@ -2,7 +2,7 @@
 
 Rust練習用です。
 
-#### サーバー起動
+#### server
 
 ```shell
 cargo run
@@ -12,30 +12,34 @@ cargo run
 http://localhost:3000
 ```
 
-#### テスト
+#### test
 
 ```shell
 cargo test
 ```
 
-## エンドポイント
+## endpoint
 
 List
+
 ```text
 GET /todos
 ```
 
 Create
+
 ```text
 POST /todos
 ```
 
 Update
+
 ```text
 PATCH /todos/:id
 ```
 
 Delete
+
 ```text
 DELETE /todos:id
 ```
