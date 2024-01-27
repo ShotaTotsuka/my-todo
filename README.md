@@ -41,5 +41,5 @@ PATCH /todos/:id
 Delete
 
 ```text
-DELETE /todos:id
+DELETE /todos/:id
 ```
